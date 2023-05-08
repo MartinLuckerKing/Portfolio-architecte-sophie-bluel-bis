@@ -306,6 +306,7 @@ display: block;
 	background-color: rgba(0,0,0,0.3); 
 	
 	
+	
   }
   
 
@@ -314,7 +315,9 @@ display: block;
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 600px;
+	width: 650px;
+	border-radius: 10px;
+	border: none;
   }
   
 
@@ -332,8 +335,15 @@ display: block;
 	cursor: pointer;
   }
 
-.modalContent h2 {
+
+.titleModal {
 	display: flex;
+	margin-top: 45px;
+	margin-bottom: 30px;
+	font-family: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+	color: #000000;
 	justify-content: center;
 }
 
@@ -349,14 +359,13 @@ display: block;
 	grid-column-gap: 10px;
 	grid-row-gap: 10px;
 	margin-top: 28px;
-	overflow-y: scroll;
 	max-height: 500px;
 	}
 
 .lineBreak {
 	border: 1px solid #B3B3B3;
 	margin-top: 38px;
-	width: 400px;
+	width: 440px;
 }
 
 .btnAddPicture {
@@ -377,6 +386,7 @@ display: block;
 	font-family: 'Syne';
 	color:#D65353;
 	margin-top: 28px;
+	padding-bottom: 40px;
 }
 
 .centerModal {
@@ -396,7 +406,9 @@ display: block;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 600px;
-	max-height: 600px;
+	max-height: 700px;
+	border-radius: 10px;
+	border: none;
 }
 
 .modalContent2 h2 {
@@ -458,15 +470,20 @@ input[type="file"] {
 
 .fa-arrow-left {
 	position: absolute;
-	font-size: 20px;
-	color: #888;
+	font-size: 22px;
+	margin-left: 8px;
+	margin-top: 5px;
+	color: #000000;
 	top: 125px;
 }
 
 .fa-xmark {
-	font-size: 20px;
-	color: #888;
+	font-size: 22px;
+	color: #000000;
 	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+
 }
 
 .customFileUpload {
@@ -488,9 +505,65 @@ input[type="file"] {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+#postPhotoButton {
+	font-family: syne;
+	display: flex;
+	justify-content: center;
+	color: white;
+	background-color: var(--green);
+	border-radius: 60px;
+	border: none;
+	padding: 9px 21px;
+	margin-top: 38px;
+	width: 237px;
+	
+}
+
+ #errorImgMiss {
+	display: none;
+	margin-top: 7px;
+	color: red;
+ }
+
+ #errorTitle {
+	display: none;
+	margin-top: 7px;
+	color: red;
+	text-align: center;
+ }
+
+ #imgUploader {
+	display: block;
+	visibility: hidden;
+	margin-top: 7px;
+	color: green;
+	text-align: center;
+	margin-bottom: 60px;
+ }
+
+
+.dropdownWrapper {
+position: relative;
+}
+
+.fa-chevron-down {
+position: absolute;
+z-index: 1;
+color: #6C6C6C;
+right: 25px;
+top: 50%;
+transform: translateY(-50%);
+}
+
 /* dropDown */
 
+#dropDown {
+	position: relative;
+}
+
 select {
+	position: relative;
 	width: 420px;
 	height: 51px;
 	border: none;
@@ -504,6 +577,35 @@ select {
 
 /* endDropDown*/
 
+.figureTargetGallery {
+	display: block;
+}
+
+.figureTarget {
+	position: relative;
+}
+
+.fa-trash-can {
+	position: absolute;
+	left: 58px;
+    top: 5px;
+	color: white;
+	font-size: 10px;
+	background-color: #000;
+	padding: 4px;
+	border-radius: 2px;
+}
+
+.fa-arrows-up-down-left-right {
+	position: absolute;
+	left: 37px;
+    top: 5px;
+	color: white;
+	font-size: 10px;
+	background-color: #000;
+	padding: 4px;
+	border-radius: 2px;
+}
 
 /* endModal */
 

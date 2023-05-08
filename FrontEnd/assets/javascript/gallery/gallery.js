@@ -1,9 +1,9 @@
-const deleteElement = () => {
+export const deleteElement = () => {
     const gallery = document.querySelector(".gallery");
     gallery.innerHTML = '';
     };
 
-const createElement = (data, id = null) => {
+const createElementInGallery = (data, id = null) => {
     const gallery = document.querySelector(".gallery");
         data.forEach(item =>{
         if ( id === null || id === 0 || item.categoryId === id) {        
@@ -13,6 +13,7 @@ const createElement = (data, id = null) => {
 
             galleryImg.src = item.imageUrl;
             galleryFigureCaption.innerHTML = item.title;
+            galleryFigure.classList.add('figureTargetGallery')
 
             gallery.appendChild(galleryFigure);
             galleryFigure.appendChild(galleryImg);
@@ -25,9 +26,10 @@ const createElementOnClick = (data, id, selector) => {
     const objets = document.querySelector(selector);
     objets.addEventListener('click', function() {
         deleteElement(selector);
-        createElement(data, id);
+        createElementInGallery(data, id);
     });
 };
+
 
 export const galleryFetchUrl = (url => {
     fetch(url)
@@ -37,7 +39,7 @@ export const galleryFetchUrl = (url => {
         })
 
         .then(data => {
-            createElement(data)
+            createElementInGallery(data)
             createElementOnClick(data, 0, '#All')
             createElementOnClick(data, 1, '#Objets')
             createElementOnClick(data, 2, '#Appartements')

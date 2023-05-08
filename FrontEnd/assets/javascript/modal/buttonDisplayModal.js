@@ -9,14 +9,20 @@ const modalArrow = document.querySelector('#arrowLeftModal')
 const preview = document.querySelector('#preview');
 const rulesUpload = document.querySelector('.rulesUpload')
 const customFileUpload = document.querySelector('.customFileUpload')
-
+const titleUpload = document.querySelector('#titleUpload')
+const imgUploaderSuccess = document.querySelector('#imgUploader');
+const errorTitle = document.querySelector("#errorTitle");
+const errorImgMiss = document.querySelector("#errorImgMiss");
 
 
 const previewComp = () => {
     rulesUpload.style.display = 'block';
     customFileUpload.style.display = 'block';
     preview.style.display = 'none';
+    imgUploaderSuccess.style.visibility = 'hidden';
     preview.removeAttribute('src');
+    errorTitle.style.display = 'none'
+    errorImgMiss.style.display = 'none'
 }
 
 
@@ -31,6 +37,7 @@ export let displayModal = () => {
     xmarkuploadPicture.addEventListener('click', () => {
         modal.style.display = 'none';
         modalContent2.style.display = 'none';
+        previewComp();
 
     });
 
@@ -59,9 +66,10 @@ export let displayModal = () => {
     modalArrow.addEventListener('click', function() {
         modalContent2.style.display = 'none';
         modalContent.style.display = 'block';
+        titleUpload.value = '';
         previewComp()
-    
-});
+    });
+
 
 
 }
