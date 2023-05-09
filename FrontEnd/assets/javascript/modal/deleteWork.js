@@ -26,25 +26,14 @@ export const deleteDom = () => {
       if (figureTargets[index] && figureTargetGallery[index]) {
         gridModal.removeChild(figureTargets[index]);
         gallery.removeChild(figureTargetGallery[index]);
-        console.log(figureTargetGallery[index]);
-        console.log(figureTargets[index]);
+
+        
+        deleteWork(fig.dataset.idButton);
       }
     });
   });
 };
 
-export const buttonDeleteWork = () => {
-  
-  const deleteButtonArray = document.querySelectorAll('.fa-trash-can');
-  for (const element of deleteButtonArray) {
-    element.addEventListener('click', (event) => {
-      event.preventDefault()
-      deleteWork(element.dataset.idButton);
-      
-      
-    });
-  };
-};
 
 
 

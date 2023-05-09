@@ -2,6 +2,7 @@ import { deleteElement } from "../gallery/gallery.js";
 import { galleryFetchUrl } from "../gallery/gallery.js";
 import { deleteElementModal } from "./galleryModal.js"
 import { galleryModalFetchUrl } from "./galleryModal.js";
+import { deleteDom } from "./deleteWork.js";
 
 export const imageUploader = () => {
   
@@ -161,13 +162,14 @@ export const buttonPostPhoto = async () => {
     event.preventDefault();
 
       await postPhoto();
+      deleteElement();
+      await galleryFetchUrl("http://localhost:5678/api/works");
+      await deleteElementModal();
+      await galleryModalFetchUrl("http://localhost:5678/api/works");
       resetErrorMessage();
       errorCheckingPostPhoto();
       styleChangeOnPostPhoto();
-      deleteElement();
-      deleteElementModal();
-      galleryModalFetchUrl("http://localhost:5678/api/works");
-      galleryFetchUrl("http://localhost:5678/api/works");
+      deleteDom()
       
 
   })

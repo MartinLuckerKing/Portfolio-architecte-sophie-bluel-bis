@@ -14,18 +14,14 @@ const dropDown = (data => {
 });
 
 
-export const dropDownFetchUrl = (url => {
-    fetch(url)
-    
+export async function dropDownFetchUrl(url) {
+    await fetch(url)
         .then(response => {
             console.log('response:', response);
             return response.json();
         })
-      
+
         .then(data => {
             dropDown(data);
-            });
         });
-
-
-
+};

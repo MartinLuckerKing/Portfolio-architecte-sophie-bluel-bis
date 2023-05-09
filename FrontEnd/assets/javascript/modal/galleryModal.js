@@ -1,9 +1,9 @@
-export const deleteElementModal = () => {
+export const deleteElementModal = async () => {
     const figure = document.querySelector('.gridModal');
     figure.innerHTML = '';
     };
 
-const createElementGallery =  (data, id = null) => {
+const createElementGalleryModal =  (data, id = null) => {
     
     const modal = document.querySelector('.gridModal');
         data.forEach(item =>{
@@ -47,7 +47,7 @@ export async function galleryModalFetchUrl(url) {
         })
 
         .then(data => {
-            createElementGallery(data)
+            createElementGalleryModal(data)
         });
 };
 

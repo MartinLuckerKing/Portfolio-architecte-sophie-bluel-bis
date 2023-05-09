@@ -25,34 +25,39 @@ const previewComp = () => {
     errorImgMiss.style.display = 'none'
 }
 
+const modalContentNone = () => {
+    modal.style.display = 'none';
+    modalContent2.style.display = 'none';
+}
+
+const modalContentBlock = () => {
+    modal.style.display = 'block';
+    modalContent.style.display = 'block';
+}
 
 export let displayModal = () => {
     btn.addEventListener('click', () => {
-    modal.style.display = 'block';
-    modalContent.style.display = 'block';
+    modalContentBlock()
     previewComp()
     });
 
 
     xmarkuploadPicture.addEventListener('click', () => {
-        modal.style.display = 'none';
-        modalContent2.style.display = 'none';
+        modalContentNone()
         previewComp();
 
     });
 
     xmark.addEventListener('click', () => {
         modal.style.display = 'none';
-        modalContent.style.display = 'none';
-        modalContent2.style.display = 'none';
+        modalContentNone()
         previewComp()
     });
 
     window.addEventListener("click", (event) => {
     if (event.target === modal) {
         modal.style.display = 'none';
-        modalContent.style.display = 'none';
-        modalContent2.style.display = 'none';
+        modalContentNone()
         previewComp()
     }
     });

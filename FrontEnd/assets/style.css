@@ -256,7 +256,7 @@ display: block;
 	text-decoration: underline;
 }
 
-#email, #password   {
+#emailLogin, #password   {
 	height: 51px;
 	width: 379px;
 	padding-left: 8px;

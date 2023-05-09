@@ -12,6 +12,7 @@ const createElementInGallery = (data, id = null) => {
             const galleryFigureCaption = document.createElement("figcaption");
 
             galleryImg.src = item.imageUrl;
+            galleryFigure.dataset.idCategory = item.categoryId;
             galleryFigureCaption.innerHTML = item.title;
             galleryFigure.classList.add('figureTargetGallery')
 
@@ -22,17 +23,25 @@ const createElementInGallery = (data, id = null) => {
     });
 };
 
-const createElementOnClick = (data, id, selector) => {
+
+const displayGallery = (id, selector) => {
+    const figureTargetGallery = document.querySelectorAll('.figureTargetGallery');
     const objets = document.querySelector(selector);
     objets.addEventListener('click', function() {
-        deleteElement(selector);
-        createElementInGallery(data, id);
+        for (const figure of figureTargetGallery) {
+            if (figure.dataset.idCategory == id || id == 0) {
+                figure.style.display = 'block';
+            } else {
+                console.log(figure.dataset.idCategory)
+                figure.style.display = 'none';
+            }
+        }
     });
 };
 
 
-export const galleryFetchUrl = (url => {
-    fetch(url)
+export async function galleryFetchUrl(url) {
+    await fetch(url)
         .then(response => {
             console.log('response:', response);
             return response.json();
@@ -40,9 +49,9 @@ export const galleryFetchUrl = (url => {
 
         .then(data => {
             createElementInGallery(data)
-            createElementOnClick(data, 0, '#All')
-            createElementOnClick(data, 1, '#Objets')
-            createElementOnClick(data, 2, '#Appartements')
-            createElementOnClick(data, 3, '#Hotelsrestaurants')
+            displayGallery(0 , '#All')
+            displayGallery( 1, '#Objets')
+            displayGallery( 2, '#Appartements')
+            displayGallery( 3, '#Hotelsrestaurants')
         });
-    });
+};

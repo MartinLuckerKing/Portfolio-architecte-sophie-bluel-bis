@@ -9,6 +9,7 @@ export const categoriesFetch = (data => {
     
     data.forEach(item => {
         const listCategories = document.createElement("li");
+        listCategories.classList.add('category')
         listCategories.textContent = item.name;
         listCategories.dataset.idCategories = item.id;
         listCategories.id = deleteSpecialCharacter(item.name);

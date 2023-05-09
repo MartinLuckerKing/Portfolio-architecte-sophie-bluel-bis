@@ -3,7 +3,7 @@ export const login = () => {
 document.querySelector('#formLogin').addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector('#email').value;
+  const email = document.querySelector('#emailLogin').value;
   const password = document.querySelector('#password').value;
 
   const url = 'http://localhost:5678/api/users/login';
