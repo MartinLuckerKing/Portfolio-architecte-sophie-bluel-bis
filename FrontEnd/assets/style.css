@@ -391,7 +391,7 @@ display: block;
 
 .myBtn {
 cursor: pointer;
-
+display: none;
 }
 
 .fa-pen-to-square {
