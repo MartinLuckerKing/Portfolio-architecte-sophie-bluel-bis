@@ -113,11 +113,10 @@ li:hover {
 #introduction figure {
 	flex: 1
 }
-#introduction img {
+#introduction img, p {
 	display: block;
-	margin: auto;
 	width: 80%;
-	margin-top: 89px;
+	
 }
 
 #introduction article {
@@ -388,6 +387,39 @@ display: block;
 	margin-top: 28px;
 	padding-bottom: 40px;
 }
+
+
+.myBtn {
+cursor: pointer;
+
+}
+
+.fa-pen-to-square {
+ margin-right: 7px;
+}
+
+.myBtnMarginBot {
+	margin-bottom: 16px;
+}
+
+.myBtnImg {
+margin-top: 9px;
+
+}
+
+.btnImgContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 89px;
+}
+
+.myProjectBtnEditAlign {
+	display: flex;
+    align-items: baseline;
+    justify-content: center;
+    column-gap: 31px;
+	}
 
 .centerModal {
 	display: flex;

@@ -1,5 +1,5 @@
 const modal = document.querySelector("#myModal");
-const btn = document.querySelector("#myBtn");
+const btn = document.querySelectorAll(".myBtn");
 const xmark = document.querySelector(".fa-xmark");
 const xmarkuploadPicture = document.querySelector("#uploadPicture");
 const modalPicture = document.querySelector('#addPicture')
@@ -36,11 +36,13 @@ const modalContentBlock = () => {
 }
 
 export let displayModal = () => {
-    btn.addEventListener('click', () => {
-    modalContentBlock()
-    previewComp()
-    });
-
+    btn.forEach((button) => {
+        button.addEventListener('click', () => {
+            modalContentBlock()
+            previewComp()
+        }
+    )});
+}
 
     xmarkuploadPicture.addEventListener('click', () => {
         modalContentNone()
@@ -77,4 +79,3 @@ export let displayModal = () => {
 
 
 
-}

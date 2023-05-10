@@ -32,13 +32,11 @@ const displayGallery = (id, selector) => {
             if (figure.dataset.idCategory == id || id == 0) {
                 figure.style.display = 'block';
             } else {
-                console.log(figure.dataset.idCategory)
                 figure.style.display = 'none';
             }
         }
     });
 };
-
 
 export async function galleryFetchUrl(url) {
     await fetch(url)
@@ -49,7 +47,7 @@ export async function galleryFetchUrl(url) {
 
         .then(data => {
             createElementInGallery(data)
-            displayGallery(0 , '#All')
+            displayGallery( 0, '#All')
             displayGallery( 1, '#Objets')
             displayGallery( 2, '#Appartements')
             displayGallery( 3, '#Hotelsrestaurants')
