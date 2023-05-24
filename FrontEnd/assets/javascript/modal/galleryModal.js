@@ -1,13 +1,23 @@
+/**
+ * Supprime tout le HTML que possède la classe gridModal.
+ */
+
 export const deleteElementModal = async () => {
     const figure = document.querySelector('.gridModal');
     figure.innerHTML = '';
     };
 
-const createElementGalleryModal =  (data, id = null) => {
-    
+
+/**
+ * Crée les images dans la modale.
+ * 
+ */
+
+
+const createElementGalleryModal =  (data) => {
     const modal = document.querySelector('.gridModal');
-        data.forEach(item =>{
-        if ( id === null) {        
+        data.forEach(item =>{      
+
             const galleryFigure = document.createElement('figure');
             const galleryImg = document.createElement('img');
             const galleryFigureCaption = document.createElement('figcaption');
@@ -34,15 +44,24 @@ const createElementGalleryModal =  (data, id = null) => {
                 const trashCanIcon = firstGalleryFigure.querySelector('.fa-arrows-up-down-left-right');
                 if (!trashCanIcon) {
                   firstGalleryFigure.insertAdjacentHTML('beforeend', '<i class="fa-solid fa-arrows-up-down-left-right"></i>');
-                }
+        
               }
         })
     }
 
+/**
+ * Récupère les information du backend et transforme le JSON en un objet javascript
+ * pour ensuite envoyer cette data dans la fonction "createElementGalleryModal()"
+ * pour afficher et manipuler cette data.
+ * 
+ *
+ * @param {string} url - URL du chemin vers les images du backend
+ *
+ */
+
 export async function galleryModalFetchUrl(url) {
     await fetch(url)
         .then(response => {
-            console.log('response:', response);
             return response.json();
         })
 

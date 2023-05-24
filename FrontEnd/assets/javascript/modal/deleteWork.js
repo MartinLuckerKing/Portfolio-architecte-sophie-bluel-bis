@@ -1,3 +1,9 @@
+/**
+ * Supprime une image de la base de donnée en récupérant l'id.
+ * 
+ * @param {integer} id - id de l'image à supprimer.
+ */
+
 const deleteWork = (id) => {
   
   const authToken = localStorage.getItem('token');
@@ -11,7 +17,13 @@ const deleteWork = (id) => {
     },  
     
   });
-}
+};
+
+/**
+ * Supprime les images en cliquant sur l'icône poubelle dans la modale 
+ * et supprime également l'image de la gallerie au même index que l'image sélectionné.
+ * 
+ */
 
 export const deleteDom = () => {
   const gallery = document.querySelector('.gallery');
@@ -26,8 +38,6 @@ export const deleteDom = () => {
       if (figureTargets[index] && figureTargetGallery[index]) {
         gridModal.removeChild(figureTargets[index]);
         gallery.removeChild(figureTargetGallery[index]);
-
-        
         deleteWork(fig.dataset.idButton);
       }
     });

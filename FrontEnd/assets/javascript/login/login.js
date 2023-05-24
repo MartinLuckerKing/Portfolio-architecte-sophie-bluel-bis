@@ -1,3 +1,9 @@
+/**
+ * Connecte un utilisateur en allant vérifier les values rentré dans les inputs
+ * email et password en stockant un token en local dans le navigateur.
+ *
+ */
+
 
 export const login = () => {
 document.querySelector('#formLogin').addEventListener('submit', async (event) => {

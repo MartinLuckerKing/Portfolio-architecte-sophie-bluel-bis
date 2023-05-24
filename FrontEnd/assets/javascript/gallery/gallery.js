@@ -1,12 +1,21 @@
+/**
+ * Supprime tout le HTML que possède la classe gallery.
+ */
+
 export const deleteElement = () => {
     const gallery = document.querySelector(".gallery");
     gallery.innerHTML = '';
-    };
+};
 
-const createElementInGallery = (data, id = null) => {
+/**
+ * Crée les images dans la gallerie.
+ * 
+ * @param {Array} data - Donnée que vous souhaitez afficher.
+ */
+
+const createElementInGallery = (data) => {
     const gallery = document.querySelector(".gallery");
         data.forEach(item =>{
-        if ( id === null || id === 0 || item.categoryId === id) {        
             const galleryFigure = document.createElement("figure");
             const galleryImg = document.createElement("img");
             const galleryFigureCaption = document.createElement("figcaption");
@@ -19,10 +28,15 @@ const createElementInGallery = (data, id = null) => {
             gallery.appendChild(galleryFigure);
             galleryFigure.appendChild(galleryImg);
             galleryFigure.appendChild(galleryFigureCaption);
-        }
     });
 };
 
+/**
+ * Affiche ou non selon la catégorie cliqué les images de la gallerie.
+ * 
+ * @param {Integer} id - Chiffre de l'id de la catégorie.
+ * @param {string} selector - querySelector.
+ */
 
 const displayGallery = (id, selector) => {
     const figureTargetGallery = document.querySelectorAll('.figureTargetGallery');
@@ -38,10 +52,18 @@ const displayGallery = (id, selector) => {
     });
 };
 
-export async function galleryFetchUrl(url) {
-    await fetch(url)
+/**
+ * Récupère les information du backend et transforme le JSON en un objet javascript
+ * pour ensuite envoyer cette data dans la fonction "createElementInGallery" pour afficher
+ * et manipuler cette data.
+ *
+ * @param {string} url - URL du chemin vers les images du backend
+ *
+ */
+
+export function galleryFetchUrl(url) {
+     fetch(url)
         .then(response => {
-            console.log('response:', response);
             return response.json();
         })
 

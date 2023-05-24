@@ -14,6 +14,9 @@ const imgUploaderSuccess = document.querySelector('#imgUploader');
 const errorTitle = document.querySelector("#errorTitle");
 const errorImgMiss = document.querySelector("#errorImgMiss");
 
+/**
+ * Redémarre l'interface pour upload une image.
+ */
 
 const previewComp = () => {
     rulesUpload.style.display = 'block';
@@ -25,15 +28,29 @@ const previewComp = () => {
     errorImgMiss.style.display = 'none'
 }
 
+/**
+ * Cache la premiere fenêtre modale
+ */
+
+
 const modalContentNone = () => {
     modal.style.display = 'none';
     modalContent2.style.display = 'none';
 }
 
+
+/**
+ * Cache la seconde fenêtre modale
+ */
+
 const modalContentBlock = () => {
     modal.style.display = 'block';
     modalContent.style.display = 'block';
 }
+
+/**
+ * Permet le fonctionnement des trois bouton modifier sur le site web
+ */
 
 export let displayModal = () => {
     btn.forEach((button) => {

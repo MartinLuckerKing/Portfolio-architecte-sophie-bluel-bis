@@ -12,26 +12,31 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+<div id="headerIsAdmin">
+	<div class="headerBar">
+		<p class="myBtnHeader"><i class="fa-regular fa-pen-to-square white"></i>Mode édition</p>
+		<p class="publishChange">publier les changements</p>
+	</div>
+</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<a href="./../../../../FrontEnd/assets/page/login.html"><li id="login">login</li></a>
-			<a href="./../../../../FrontEnd/assets/page/login.html"><li id="logout">logout</li></a>
+			<li id="login"><a href="./../../../../FrontEnd/assets/page/login.html">login</a></li>
+			<li id="logout"><a href="./../../../../FrontEnd/assets/page/login.html">logout</a></li>
 	
 			<li><img src="./../../../../FrontEnd/assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
-	
 </header>
 <main>
 	<section id="introduction">
 		<figure>
 			<div class="btnImgContainer">
 				<img src="./assets/images/sophie-bluel.png" alt="">
-				<div class="myBtnImg">
+				<div class="myBtnImg"></div>
 					
 			</div>
 			<p class="myBtn"><i class="fa-regular fa-pen-to-square"></i>Modifier</p>
@@ -73,7 +78,7 @@
 		</form>
 	</section>
 </main>
-<div id="myModal" class="modal">
+<section id="myModal" class="modal">
 	<div class="modalContent">
 		<i class="fa-solid fa-xmark"></i>
 		<h2 class="titleModal">Gallerie d'image</h2>
@@ -82,7 +87,7 @@
 				<div class="gridModal"></div>
 				<div class="lineBreak"></div>
 				<div class="centerBtn">
-					<div href="#addPicture" id="addPicture" class="btnAddPicture">Ajouter une photo</div>
+					<a href="#addPicture" id="addPicture" class="btnAddPicture">Ajouter une photo</a>
 				</div>
 				<div class="centerBtn">
 					<p class="deleteGallery">Supprimer la galerie</p>
@@ -93,47 +98,47 @@
 
 	<div class="modalContent2">
 		<form id="uploader" method="POST">
-		<div id="inputLogin">
-			<i id="arrowLeftModal" class="fa-solid fa-arrow-left"></i>
-			<i id="uploadPicture" class="fa-solid fa-xmark"></i>
-			<div class="center">
-				
-				<h2 class="titleModal" >Ajout Photo</h2>
-			<div class="previewContainer">
-					<i class="fa-sharp fa-regular fa-image"></i>
-					<label for="fileUpload" class="customFileUpload">
-						+ Ajouter photo
-					</label>
-					<div class="rulesUpload">jpg, png : 4mo max</div>
-				<input id="fileUpload" type="file"/>
-				<img id="preview">
-			</div>
-			<div id="errorImgMiss">Image manquante</div>
-			<div class="containerInputUploader">
-			<div>
-
-				<label for="titre">Titre</label>
-				<input id="titleUpload" required>
-				<div id="errorTitle">Titre manquant</div>
-			</div>
-
-
-				<label for="categories">Catégories</label>
-				<div class="dropdownWrapper">
-				  <select name="dropDownMenu" id="dropDown"></select>
-				  <i class="fa-solid fa-chevron-down"></i>
+			<div id="inputLogin">
+				<i id="arrowLeftModal" class="fa-solid fa-arrow-left"></i>
+				<i id="uploadPicture" class="fa-solid fa-xmark"></i>
+				<div class="center">
+					
+					<h2 class="titleModal" >Ajout Photo</h2>
+				<div class="previewContainer">
+						<i class="fa-sharp fa-regular fa-image"></i>
+						<label for="fileUpload" class="customFileUpload">
+							+ Ajouter photo
+						</label>
+						<div class="rulesUpload">jpg, png : 4mo max</div>
+					<input id="fileUpload" type="file">
+					<img id="preview" src="#" alt="#">
 				</div>
-			  </div>
-			
-			<div class="lineBreak"></div>
-			
-			<button type="submit" id="postPhotoButton">valider</button>
-			<div id="imgUploader">Image uploader !</div>
+				<div id="errorImgMiss">Image manquante</div>
+				<div class="containerInputUploader">
+				<div>
+
+					<label>Titre</label>
+					<input id="titleUpload" required>
+					<div id="errorTitle">Titre manquant</div>
+				</div>
+
+
+					<label>Catégories</label>
+					<div class="dropdownWrapper">
+					<select name="dropDownMenu" id="dropDown"></select>
+					<i class="fa-solid fa-chevron-down"></i>
+					</div>
+				</div>
+				
+				<div class="lineBreak"></div>
+				
+				<button type="submit" id="postPhotoButton">valider</button>
+				<div id="imgUploader"></div>
+				</div>
+			</div>
 		</form>
-	</div>
-	</div>
-</div>
-</div>
+		</div>
+</section>
 <footer>
 	<nav>
 		<ul>

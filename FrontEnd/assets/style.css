@@ -66,9 +66,6 @@ header {
 	justify-content: space-between;
 	margin: 50px 0
 }
-section {
-	margin: 50px 0
-}
 
 h1{
 	display: flex;
@@ -106,6 +103,45 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+.white {
+	color: white;
+}
+
+#headerIsAdmin {
+	display: none;
+}
+
+.headerBar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	background-color: black;
+	width: 100vw;
+	margin-left: calc(-1 * ((100vw - 100%) / 2));
+	height: 59px;
+
+}
+
+.publishChange {
+	color: #000;
+	background-color: white;
+	padding: 11px 23px;
+	border-radius: 60px;
+	margin-left: 21px;
+	font-weight: 600;
+	font-size: 14px;
+
+}
+
+.myBtnHeader {
+	color: white;
+	font-size: 16px;
+	
+}
+
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -113,7 +149,13 @@ li:hover {
 #introduction figure {
 	flex: 1
 }
-#introduction img, p {
+
+#introduction img {
+	display: block;
+	width: 80%;
+}
+
+#introduction p {
 	display: block;
 	width: 80%;
 	
@@ -372,6 +414,7 @@ display: block;
 	display: flex;
 	justify-content: center;
 	color: white;
+	text-decoration: none;
 	background-color: var(--green);
 	border: 1px var(--green) solid;
 	border-radius: 60px;
@@ -386,6 +429,7 @@ display: block;
 	color:#D65353;
 	margin-top: 28px;
 	padding-bottom: 40px;
+;
 }
 
 
@@ -441,6 +485,10 @@ margin-top: 9px;
 	max-height: 700px;
 	border-radius: 10px;
 	border: none;
+}
+
+#displayBlockModal {
+	display: block;
 }
 
 .modalContent2 h2 {
@@ -567,11 +615,18 @@ input[type="file"] {
 
  #imgUploader {
 	display: block;
-	visibility: hidden;
+	visibility: visible;
 	margin-top: 7px;
 	color: green;
 	text-align: center;
 	margin-bottom: 60px;
+ }
+
+ #imgUploaderFailed {
+	display: block;
+	visibility: visible;
+	color: red;
+	text-align: center;
  }
 
 
